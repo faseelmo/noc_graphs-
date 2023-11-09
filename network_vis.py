@@ -5,6 +5,7 @@ import networkx as nx
 file = 'network.xml'
 root = utils.getRoot(file)
 
+"""Extract info from .XML"""
 type_of_nodes = utils.findNodelModel(root)
 router_info, pe_info= utils.getAllNodeType(root)
 """
@@ -16,8 +17,8 @@ router_info, pe_info= utils.getAllNodeType(root)
        'z'         : value, # z_pos
     }
 """
-
 connections = utils.getConnectInfo(root)
+
 
 G = nx.Graph()
 
@@ -26,7 +27,6 @@ utils.addNodeToGraph(pe_info, '', G)
 utils.addConnectionToGraph(G, connections)
 
 num_routers = len(router_info)
-
 node_mapping = utils.reMapNodes(G)
 
 G = nx.relabel_nodes(G, node_mapping)
