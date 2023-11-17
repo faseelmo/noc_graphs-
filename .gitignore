@@ -2,3 +2,5 @@ __pycache__
 data.xml
 config.xml
 map.xml
+/lib/
+test.html

@@ -1,5 +1,4 @@
 import utils
-import matplotlib.pyplot as plt 
 import networkx as nx
 
 file = 'network.xml'
@@ -29,7 +28,7 @@ utils.addConnectionToGraph(G, connections)
 num_routers = len(router_info)
 node_mapping = utils.reMapNodes(G)
 
-G = nx.relabel_nodes(G, node_mapping)
+# G = nx.relabel_nodes(G, node_mapping)
 adj_list = utils.getAdjList(G,toPrint=True)
 
 utils.visGraph(G)
